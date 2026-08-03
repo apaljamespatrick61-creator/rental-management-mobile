@@ -4,7 +4,10 @@ import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { colors } from "../../../../shared/constants/theme";
 import { styles } from "./styles";
 
-interface LoginFormProps {}
+interface LoginFormProps {
+    email?: string;
+    password?: string;
+}
 export default function LoginForm(props: LoginFormProps) {
   return (
     <View style={styles.container}>
@@ -17,6 +20,7 @@ export default function LoginForm(props: LoginFormProps) {
               placeholder="example@example.com"
               style={styles.textInput}
               placeholderTextColor={colors.textSecondary}
+              value={props.email}
             />
           </View>
           <Text style={styles.text}>Password:</Text>
@@ -27,6 +31,7 @@ export default function LoginForm(props: LoginFormProps) {
               secureTextEntry
               style={styles.textInput}
               placeholderTextColor={colors.textSecondary}
+              value={props.password}
             />
           </View>
           <View style={styles.forgotPasswordContainer}>

@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     borderColor: colors.borderGray,
     borderRadius: moderateScale(8),
     padding: moderateScale(16),
-    width: scale(150),
+    width: scale(250),
     alignItems: "center",
   },
 

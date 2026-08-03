@@ -1,3 +1,8 @@
 export { RootNavigator } from "./root-navigator";
-export type { RootStackParamList } from "./types";
+export type {
+    AuthStackParamList,
+    MainTabParamList,
+    RentalsStackParamList,
+    RootStackParamList
+} from "./types";
 

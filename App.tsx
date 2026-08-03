@@ -1,9 +1,22 @@
-import { Text, View } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet } from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import Auth from "./src/features/auth";
 
 export default function App() {
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>App shell ready for React Navigation setup.</Text>
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <StatusBar style="dark" />
+        <Auth />
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#FFFFFF",
+  },
+});

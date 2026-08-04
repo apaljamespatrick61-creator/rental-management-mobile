@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     padding: moderateScale(16),
+    marginTop: verticalScale(30),
   },
 
   borderForm: {
@@ -14,7 +15,7 @@ export const styles = StyleSheet.create({
     borderColor: colors.borderGray,
     borderRadius: moderateScale(8),
     padding: moderateScale(16),
-    width: scale(250),
+    width: scale(320),
     alignItems: "center",
   },
 
@@ -28,8 +29,8 @@ export const styles = StyleSheet.create({
     borderColor: "#ccc",
     marginTop: verticalScale(2),
     borderRadius: moderateScale(4),
-    width: scale(120),
-    height: verticalScale(17),
+    width: scale(280),
+    height: verticalScale(40),
     backgroundColor: colors.lightgray,
     paddingHorizontal: moderateScale(4),
     flexDirection: "row",
@@ -42,7 +43,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     height: "100%",
     paddingVertical: 0,
-    fontSize: moderateScale(8),
+    fontSize: moderateScale(14),
   },
   text: {
     fontWeight: "bold",
@@ -65,11 +66,11 @@ export const styles = StyleSheet.create({
     padding: moderateScale(4),
     backgroundColor: colors.primary,
     borderRadius: moderateScale(4),
-    width: scale(120),
+    width: scale(280),
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
-    height: verticalScale(17),
+    height: verticalScale(40),
   },
   signInIcon: {
     marginRight: scale(4),
@@ -77,12 +78,12 @@ export const styles = StyleSheet.create({
   signInText: {
     color: "#fff",
     fontWeight: "bold",
-    fontSize: moderateScale(10),
+    fontSize: moderateScale(14),
     padding: moderateScale(2),
   },
 
   iconStyle: {
-    width: scale(10),
+    width: scale(20),
     color: "#fff",
   },
   

@@ -8,10 +8,10 @@ export type AuthStackParamList = {
 };
 
 export type MainTabParamList = {
-  Dashboard: undefined;
-  Rentals: undefined;
-  Tenants: undefined;
+  Home: undefined;
   Payments: undefined;
+  Alerts: undefined;
+  Profile: undefined;
 };
 
 export type RentalsStackParamList = {

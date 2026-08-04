@@ -5,17 +5,22 @@ import { colors } from "../../../../shared/constants/theme";
 import { styles } from "./styles";
 
 interface LoginFormProps {
-    email?: string;
-    password?: string;
+  email?: string;
+  password?: string;
+  onSignIn?: () => void;
 }
-export default function LoginForm(props: LoginFormProps) {
+export default function LoginForm(props: Readonly<LoginFormProps>) {
   return (
     <View style={styles.container}>
       <View style={styles.borderForm}>
         <View style={styles.loginForm}>
           <Text style={styles.text}>Email Address:</Text>
           <View style={styles.inputRow}>
-            <Mail size={styles.iconStyle.width} color={colors.primary} style={styles.inputIcon} />
+            <Mail
+              size={styles.iconStyle.width}
+              color={colors.primary}
+              style={styles.inputIcon}
+            />
             <TextInput
               placeholder="example@example.com"
               style={styles.textInput}
@@ -25,7 +30,11 @@ export default function LoginForm(props: LoginFormProps) {
           </View>
           <Text style={styles.text}>Password:</Text>
           <View style={styles.inputRow}>
-            <Lock size={styles.iconStyle.width} color={colors.primary} style={styles.inputIcon} />
+            <Lock
+              size={styles.iconStyle.width}
+              color={colors.primary}
+              style={styles.inputIcon}
+            />
             <TextInput
               placeholder="********"
               secureTextEntry
@@ -40,7 +49,7 @@ export default function LoginForm(props: LoginFormProps) {
             </TouchableOpacity>
           </View>
           <View style={styles.signInContainer}>
-            <TouchableOpacity style={styles.signInBtn}>
+            <TouchableOpacity style={styles.signInBtn} onPress={props.onSignIn}>
               <LogIn
                 size={styles.iconStyle.width}
                 color={styles.iconStyle.color}

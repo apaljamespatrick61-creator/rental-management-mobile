@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react-native";
+import { fireEvent, render } from "@testing-library/react-native";
 import React from "react";
 import LoginForm from "./login-form";
 
@@ -23,5 +23,14 @@ describe("LoginForm", () => {
     expect(getByPlaceholderText("example@example.com")).toBeTruthy();
     expect(getByPlaceholderText("********")).toBeTruthy();
     expect(getByText("Sign In")).toBeTruthy();
+  });
+
+  it("calls onSignIn when Sign In is pressed", () => {
+    const onSignIn = jest.fn();
+    const { getByText } = render(<LoginForm onSignIn={onSignIn} />);
+
+    fireEvent.press(getByText("Sign In"));
+
+    expect(onSignIn).toHaveBeenCalledTimes(1);
   });
 });

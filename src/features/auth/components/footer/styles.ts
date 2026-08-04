@@ -6,16 +6,15 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     position: "absolute",
     bottom: verticalScale(20),
-    width: scale(150),
   },
 
   text: {
     textAlign: "center",
-    fontSize: moderateScale(10),
+    fontSize: moderateScale(14),
     color: colors.secondary,
   },
     link: {
-        fontSize: moderateScale(10),
+        fontSize: moderateScale(14),
         color: colors.primary,
     }
 });

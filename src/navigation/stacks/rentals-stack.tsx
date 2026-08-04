@@ -10,7 +10,7 @@ const Stack = createNativeStackNavigator<RentalsStackParamList>();
 
 export function RentalsStack() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen
         name="RentalsList"
         component={RentalsListScreen}

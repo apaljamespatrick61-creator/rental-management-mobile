@@ -23,5 +23,26 @@ export default StyleSheet.create({
     fontWeight: "bold",
     color: colors.secondary,
   },
-
+  list: {
+    height: verticalScale(220),
+  },
+  listContent: {
+    paddingTop: verticalScale(12),
+    paddingBottom: verticalScale(6),
+  },
+  itemRow: {
+    rowGap: verticalScale(4),
+  },
+  itemTitle: {
+    fontSize: moderateScale(14),
+    color: colors.secondary,
+    fontWeight: "600",
+  },
+  itemDate: {
+    fontSize: moderateScale(12),
+    color: colors.textSecondary,
+  },
+  separator: {
+    height: verticalScale(10),
+  },
 });

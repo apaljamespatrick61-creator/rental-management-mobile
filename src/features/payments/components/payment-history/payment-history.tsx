@@ -70,35 +70,36 @@ function getStatusColor(status: string) {
 }
 
 export default function PaymentHistory() {
+
+    const renderItem = ({ item }: { item: PaymentHistoryItems }) => (
+    <View style={styles.itemRow}>
+      <Text style={styles.itemTitle}>{item.title}</Text>
+        <View style={styles.itemMetaRow}>
+            <Text style={styles.itemDate}>{item.date}</Text>
+            <Text
+                style={[
+                    styles.itemStatus,
+                    { color: getStatusColor(item.status) },
+                ]}
+            >
+                {item.status}
+            </Text>
+        </View>
+    </View>
+  );
   return (
     <View style={styles.container}>
       <View style={styles.box}>
         <View style={styles.boxContent}>
           <Text style={styles.boxText}>PAYMENT HISTORY</Text>
           <View style={styles.line} />
-
           <FlashList
             data={ITEMS}
             keyExtractor={(item) => item.id}
             style={styles.list}
             contentContainerStyle={styles.listContent}
             ItemSeparatorComponent={PaymentSeparator}
-            renderItem={({ item }) => (
-              <View style={styles.itemRow}>
-                <Text style={styles.itemTitle}>{item.title}</Text>
-                <View style={styles.itemMetaRow}>
-                  <Text style={styles.itemDate}>{item.date}</Text>
-                  <Text
-                    style={[
-                      styles.itemStatus,
-                      { color: getStatusColor(item.status) },
-                    ]}
-                  >
-                    {item.status}
-                  </Text>
-                </View>
-              </View>
-            )}
+            renderItem={renderItem}
           />
         </View>
       </View>

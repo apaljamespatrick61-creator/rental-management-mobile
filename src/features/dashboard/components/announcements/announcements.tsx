@@ -61,6 +61,13 @@ function AnnouncementSeparator() {
 }
 
 export default function Announcements() {
+
+  const renderItem = ({ item }: { item: AnnouncementItem }) => (
+    <View style={styles.itemRow}>
+      <Text style={styles.itemTitle}>{item.title}</Text>
+      <Text style={styles.itemDate}>{item.date}</Text>
+    </View>
+  );
   return (
     <View style={styles.container}>
       <View style={styles.box}>
@@ -77,12 +84,7 @@ export default function Announcements() {
           keyExtractor={(item) => item.id}
           contentContainerStyle={styles.listContent}
           ItemSeparatorComponent={AnnouncementSeparator}
-          renderItem={({ item }) => (
-            <View style={styles.itemRow}>
-              <Text style={styles.itemTitle}>{item.title}</Text>
-              <Text style={styles.itemDate}>{item.date}</Text>
-            </View>
-          )}
+          renderItem={renderItem}
         />
       </View>
     </View>

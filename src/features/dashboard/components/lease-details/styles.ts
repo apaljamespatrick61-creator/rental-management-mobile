@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 import { moderateScale, scale, verticalScale } from "react-native-size-matters";
 import { colors } from "../../../../shared/constants/theme";
+
 export default StyleSheet.create({
   container: {
     flexDirection: "column",
@@ -10,33 +11,30 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.borderGray,
     borderRadius: moderateScale(8),
-    borderLeftColor: colors.primary,
-    borderLeftWidth: scale(4),
-  },
-  boxContent: {
     padding: moderateScale(16),
-    alignItems: "flex-start",
-    justifyContent: "space-between",
-    height: verticalScale(140),
   },
-  boxText: {
-    fontSize: moderateScale(16),
-    fontWeight: "bold",
-    color: colors.secondary,
-  },
-  boxPaymentText: {
-    fontSize: moderateScale(24),
-    fontWeight: "bold",
-    color: colors.primary,
-  },
-  boxSubRow: {
+  titleRow: {
     flexDirection: "row",
     alignItems: "center",
     columnGap: scale(6),
   },
-  boxSubText: {
-    fontSize: moderateScale(14),
+  titleText: {
+    fontSize: moderateScale(16),
     fontWeight: "bold",
     color: colors.secondary,
   },
+  line: {
+    borderBottomWidth: 1,
+    borderBottomColor: colors.borderGray,
+    marginVertical: verticalScale(8),
+  },
+  leaseDetailsContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginVertical: verticalScale(6),
+  },
+  subText:{
+    fontSize: moderateScale(14),
+    fontWeight: "bold",
+  }
 });

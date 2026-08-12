@@ -5,6 +5,7 @@ export default StyleSheet.create({
     container:{
         flexDirection: 'column',
         padding: moderateScale(15),
+        flex: 1
     }
 
 })

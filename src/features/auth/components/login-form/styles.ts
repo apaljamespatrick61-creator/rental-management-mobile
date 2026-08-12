@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
     borderRadius: moderateScale(4),
     width: scale(280),
     height: verticalScale(40),
-    backgroundColor: colors.lightgray,
+    // backgroundColor: colors.lightgray,
     paddingHorizontal: moderateScale(4),
     flexDirection: "row",
     alignItems: "center",

@@ -1,6 +1,7 @@
 import { Lock, LogIn, Mail } from "lucide-react-native";
 import React from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import Button from "../../../../shared/components/button/button";
 import { colors } from "../../../../shared/constants/theme";
 import { styles } from "./styles";
 
@@ -49,14 +50,19 @@ export default function LoginForm(props: Readonly<LoginFormProps>) {
             </TouchableOpacity>
           </View>
           <View style={styles.signInContainer}>
-            <TouchableOpacity style={styles.signInBtn} onPress={props.onSignIn}>
-              <LogIn
-                size={styles.iconStyle.width}
-                color={styles.iconStyle.color}
-                style={styles.iconStyle}
-              />
-              <Text style={styles.signInText}>Sign In</Text>
-            </TouchableOpacity>
+            <Button
+              title="Sign In"
+              onPress={props.onSignIn}
+              icon={
+                <LogIn
+                  size={styles.iconStyle.width}
+                  color={styles.iconStyle.color}
+                  style={styles.signInIcon}
+                />
+              }
+              style={styles.signInBtn}
+              textStyle={styles.signInText}
+            />
           </View>
         </View>
       </View>

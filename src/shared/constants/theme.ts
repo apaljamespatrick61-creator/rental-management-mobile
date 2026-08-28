@@ -7,6 +7,7 @@ export const colors = {
   lightgray: "#EEF1F7",
   borderGray: "#DFE3E8",
   textSecondary: "#A8ABB1",
+  warning: "#f92548",
 };
 
 export const typography = {

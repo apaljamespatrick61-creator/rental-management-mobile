@@ -15,7 +15,7 @@ export default StyleSheet.create({
   boxContent: {
     padding: moderateScale(16),
     alignItems: "flex-start",
-    height: verticalScale(360),
+    height: verticalScale(400),
   },
   boxText: {
     fontSize: moderateScale(16),

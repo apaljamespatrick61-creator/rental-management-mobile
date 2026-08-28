@@ -70,21 +70,17 @@ function getStatusColor(status: string) {
 }
 
 export default function PaymentHistory() {
-
-    const renderItem = ({ item }: { item: PaymentHistoryItems }) => (
+  const renderItem = ({ item }: { item: PaymentHistoryItems }) => (
     <View style={styles.itemRow}>
       <Text style={styles.itemTitle}>{item.title}</Text>
-        <View style={styles.itemMetaRow}>
-            <Text style={styles.itemDate}>{item.date}</Text>
-            <Text
-                style={[
-                    styles.itemStatus,
-                    { color: getStatusColor(item.status) },
-                ]}
-            >
-                {item.status}
-            </Text>
-        </View>
+      <View style={styles.itemMetaRow}>
+        <Text style={styles.itemDate}>{item.date}</Text>
+        <Text
+          style={[styles.itemStatus, { color: getStatusColor(item.status) }]}
+        >
+          {item.status}
+        </Text>
+      </View>
     </View>
   );
   return (

@@ -4,8 +4,8 @@ import { StyleSheet, Text, View } from "react-native";
 import { moderateScale, verticalScale } from "react-native-size-matters";
 import Dashboard from "../../features/dashboard";
 import Payments from "../../features/payments"; 
+import Notifications from "../../features/notifications";
 import { MainTabParamList } from "../types";
-import { RentalsStack } from "./rentals-stack";
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 const TAB_ICON_SIZE = moderateScale(20);
@@ -52,13 +52,7 @@ function TenantsPlaceholder() {
   );
 }
 
-function PaymentsPlaceholder() {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Payments screen coming soon.</Text>
-    </View>
-  );
-}
+
 
 export function MainTabs() {
   return (
@@ -86,7 +80,7 @@ export function MainTabs() {
       />
       <Tab.Screen
         name="Alerts"
-        component={PaymentsPlaceholder}
+        component={Notifications}
         options={{ tabBarIcon: AlertsTabIcon }}
       />
       <Tab.Screen

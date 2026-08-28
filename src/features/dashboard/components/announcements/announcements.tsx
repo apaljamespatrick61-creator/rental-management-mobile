@@ -1,5 +1,5 @@
-import { FlashList } from "@shopify/flash-list";
 import { Megaphone } from "lucide-react-native";
+import { FlashList } from "@shopify/flash-list";
 import React from "react";
 import { Text, View } from "react-native";
 import { colors } from "../../../../shared/constants/theme";

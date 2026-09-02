@@ -5,6 +5,7 @@ import { moderateScale, verticalScale } from "react-native-size-matters";
 import Dashboard from "../../features/dashboard";
 import Payments from "../../features/payments"; 
 import Notifications from "../../features/notifications";
+import Profile from "../../features/profile";
 import { MainTabParamList } from "../types";
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
@@ -85,7 +86,7 @@ export function MainTabs() {
       />
       <Tab.Screen
         name="Profile"
-        component={TenantsPlaceholder}
+        component={Profile}
         options={{ tabBarIcon: ProfileTabIcon }}
       />
     </Tab.Navigator>

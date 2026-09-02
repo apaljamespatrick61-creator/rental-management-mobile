@@ -35,7 +35,7 @@ export default StyleSheet.create({
     fontWeight: "bold",
   },
   button: {
-    width: scale(130),
+    width: scale(150),
     height: verticalScale(35),
   },
   profileHeaderContainer: {
@@ -55,18 +55,38 @@ export default StyleSheet.create({
     borderBottomColor: colors.borderGray,
     marginVertical: verticalScale(8),
   },
-  inputContainer:{
+  inputContainer: {
     width: "100%",
     marginBottom: verticalScale(10),
+    rowGap: verticalScale(10),
   },
-  label:{
-    color:colors.textSecondary
+  label: {
+    color: colors.textSecondary,
   },
-  textInput:{
+  inputRow: {
+    width: "100%",
+    position: "relative",
+    justifyContent: "center",
+  },
+  textInput: {
     borderWidth: 1,
     width: "100%",
     borderColor: colors.borderGray,
     borderRadius: moderateScale(4),
-    padding: moderateScale(8),
+    padding: moderateScale(10),
+    paddingRight: scale(36),
+    height: verticalScale(40),
+    backgroundColor: colors.lightgray,
+  },
+  inputIcon: {
+    position: "absolute",
+    right: scale(12),
+  },
+  iconStyle: {
+    width: scale(20),
+    color: "#fff",
+  },
+  buttonContainer:{
+    alignItems: "center",
   }
 });

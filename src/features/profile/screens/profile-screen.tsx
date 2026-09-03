@@ -7,6 +7,7 @@ export default function ProfileScreen() {
   return (
     <View style={styles.container}>
       <ProfileDetails />
+
     </View>
   );
 }

@@ -86,7 +86,7 @@ export default function ProfileDetails() {
           <View style={styles.inputRow}>
             <TextInput
               style={styles.textInput}
-              placeholder="Enter your phone number"
+              placeholder="Enter phone number"
             />
             <Edit3
               size={18}
@@ -94,6 +94,14 @@ export default function ProfileDetails() {
               style={styles.inputIcon}
             />
           </View>
+        </View>
+        <View style={styles.saveButtonContainer}>
+          <Button
+            title="Save Changes"
+            onPress={() => {}}
+            style={styles.saveButton}
+            textStyle={{ color: colors.primary }}
+          />
         </View>
       </View>
       <View style={styles.buttonContainer}>

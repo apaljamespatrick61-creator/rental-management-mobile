@@ -88,5 +88,14 @@ export default StyleSheet.create({
   },
   buttonContainer:{
     alignItems: "center",
+  },
+  saveButton: {
+    height: verticalScale(35),
+    backgroundColor: 'white',
+    borderColor: colors.primary,
+    borderWidth: 1,
+  },
+  saveButtonContainer: {
+    alignSelf: "center",
   }
 });

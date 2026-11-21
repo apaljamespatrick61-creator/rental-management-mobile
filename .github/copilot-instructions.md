@@ -18,6 +18,10 @@
 - Prefer functional components and React hooks. Keep components small and move non-UI logic into hooks or services.
 - Ensure changes work on Android first (primary native target in this repo), and avoid introducing platform-specific code unless required.
 - Do not upgrade core package versions or alter build tooling unless explicitly requested.
+- Follow SOLID: keep each component, hook, or service focused on one responsibility and depend on abstractions (props, hooks, services) rather than concrete implementations.
+- Follow KISS: prefer the simplest code that meets the requirement; avoid unnecessary abstraction and indirection.
+- Follow DRY: extract repeated logic or UI into shared hooks, utilities, or components in src/shared, but do not force premature abstraction of code that only appears once.
+- Follow YAGNI: implement only what the current task requires; do not add speculative features, configuration, or generic extension points.
 
 ## Suggested Output Style
 

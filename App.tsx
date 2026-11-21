@@ -1,18 +1,25 @@
+import { QueryClientProvider } from "@tanstack/react-query";
 import { StatusBar } from "expo-status-bar";
 import { Platform, StyleSheet, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { RootNavigator } from "./src/navigation";
+import { queryClient } from "./src/services/query/query-client";
 
 export default function App() {
   return (
-    <SafeAreaProvider>
-      <View style={styles.outerContainer}>
-        <SafeAreaView style={styles.container} edges={["top", "left", "right"]}>
-          <StatusBar style="dark" />
-          <RootNavigator />
-        </SafeAreaView>
-      </View>
-    </SafeAreaProvider>
+    <QueryClientProvider client={queryClient}>
+      <SafeAreaProvider>
+        <View style={styles.outerContainer}>
+          <SafeAreaView
+            style={styles.container}
+            edges={["top", "left", "right"]}
+          >
+            <StatusBar style="dark" />
+            <RootNavigator />
+          </SafeAreaView>
+        </View>
+      </SafeAreaProvider>
+    </QueryClientProvider>
   );
 }
 

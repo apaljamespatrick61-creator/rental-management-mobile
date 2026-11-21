@@ -1,10 +1,10 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Bell, CreditCard, House, User } from "lucide-react-native";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { moderateScale, verticalScale } from "react-native-size-matters";
 import Dashboard from "../../features/dashboard";
-import Payments from "../../features/payments"; 
 import Notifications from "../../features/notifications";
+import Payments from "../../features/payments";
 import Profile from "../../features/profile";
 import { MainTabParamList } from "../types";
 
@@ -45,16 +45,6 @@ function ProfileTabIcon({ color, focused }: TabIconProps) {
   );
 }
 
-function TenantsPlaceholder() {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Tenants screen coming soon.</Text>
-    </View>
-  );
-}
-
-
-
 export function MainTabs() {
   return (
     <Tab.Navigator
@@ -62,9 +52,13 @@ export function MainTabs() {
         headerShown: false,
         tabBarActiveTintColor: "#1A73E8",
         tabBarInactiveTintColor: "black",
+        tabBarLabelStyle: {
+          fontSize: moderateScale(11),
+          fontWeight: "500",
+        },
         tabBarStyle: {
-          height: verticalScale(50),
-          paddingTop: verticalScale(6),
+          height: verticalScale(64),
+          paddingTop: verticalScale(4),
           paddingBottom: verticalScale(8),
         },
       }}
@@ -97,7 +91,7 @@ const styles = StyleSheet.create({
   iconContainer: {
     borderRadius: 12,
     paddingHorizontal: 10,
-    paddingVertical: 6,
+    paddingVertical: 3,
   },
   iconContainerActive: {
     backgroundColor: "#E8F0FE",

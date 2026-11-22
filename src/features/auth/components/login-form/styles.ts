@@ -48,6 +48,11 @@ export const styles = StyleSheet.create({
   text: {
     fontWeight: "bold",
   },
+  errorText: {
+    color: colors.warning,
+    fontSize: moderateScale(12),
+    marginTop: verticalScale(2),
+  },
   forgotPasswordContainer: {
     alignItems: "flex-end",
     marginTop: verticalScale(2),
@@ -86,5 +91,4 @@ export const styles = StyleSheet.create({
     width: scale(20),
     color: "#fff",
   },
-  
 });

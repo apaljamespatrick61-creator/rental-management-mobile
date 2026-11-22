@@ -16,6 +16,10 @@ jest.mock("lucide-react-native", () => {
   };
 });
 
+jest.mock("@react-navigation/native", () => ({
+  useNavigation: () => ({ dispatch: jest.fn() }),
+}));
+
 describe("ProfileDetails", () => {
   it("renders profile sections, placeholders, and actions", () => {
     const { getByText, getByPlaceholderText } = render(<ProfileDetails />);

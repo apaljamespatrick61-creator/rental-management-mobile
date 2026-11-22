@@ -1,17 +1,20 @@
 import {
   Edit3,
   Info,
-  UserRound,
-  ShieldUser,
   LogOut,
+  ShieldUser,
+  UserRound,
 } from "lucide-react-native";
 import React from "react";
 import { Text, TextInput, View } from "react-native";
 import Button from "../../../../shared/components/button/button";
 import { colors } from "../../../../shared/constants/theme";
+import { useLogout } from "../../../auth/hooks/use-logout";
 import styles from "./styles";
 
 export default function ProfileDetails() {
+  const handleLogout = useLogout();
+
   return (
     <View style={styles.container}>
       <View style={styles.box}>
@@ -114,7 +117,7 @@ export default function ProfileDetails() {
               style={styles.iconStyle}
             />
           }
-          onPress={() => {}}
+          onPress={handleLogout}
           style={styles.button}
         />
       </View>

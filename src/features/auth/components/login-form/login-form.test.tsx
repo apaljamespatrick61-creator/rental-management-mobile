@@ -1,4 +1,4 @@
-import { fireEvent, render } from "@testing-library/react-native";
+import { fireEvent, render, waitFor } from "@testing-library/react-native";
 import React from "react";
 import LoginForm from "./login-form";
 
@@ -25,12 +25,35 @@ describe("LoginForm", () => {
     expect(getByText("Sign In")).toBeTruthy();
   });
 
-  it("calls onSignIn when Sign In is pressed", () => {
+  it("calls onSignIn with valid credentials when Sign In is pressed", async () => {
     const onSignIn = jest.fn();
-    const { getByText } = render(<LoginForm onSignIn={onSignIn} />);
+    const { getByText, getByPlaceholderText } = render(
+      <LoginForm onSignIn={onSignIn} />,
+    );
+
+    fireEvent.changeText(
+      getByPlaceholderText("example@example.com"),
+      "test@example.com",
+    );
+    fireEvent.changeText(getByPlaceholderText("********"), "secret");
+    fireEvent.press(getByText("Sign In"));
+
+    await waitFor(() =>
+      expect(onSignIn).toHaveBeenCalledWith({
+        email: "test@example.com",
+        password: "secret",
+      }),
+    );
+  });
+
+  it("shows validation errors and does not call onSignIn for empty fields", async () => {
+    const onSignIn = jest.fn();
+    const { getByText, findByText } = render(<LoginForm onSignIn={onSignIn} />);
 
     fireEvent.press(getByText("Sign In"));
 
-    expect(onSignIn).toHaveBeenCalledTimes(1);
+    expect(await findByText("Email is required")).toBeTruthy();
+    expect(getByText("Password is required")).toBeTruthy();
+    expect(onSignIn).not.toHaveBeenCalled();
   });
 });

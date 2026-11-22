@@ -5,4 +5,7 @@ export const secureStorage = {
   async setItem(_key: string, _value: string) {
     return;
   },
+  async removeItem(_key: string) {
+    return;
+  },
 };
